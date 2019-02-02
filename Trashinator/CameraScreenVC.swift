@@ -20,8 +20,8 @@ class CameraScreenVC: UIViewController {
 
     // MARK: Actions
     func initLabel() {
-        itemNameLabel.text = nil
-        
+        itemNameLabel.text = "placeholder"
+        itemNameLabel.font = UIFont.systemFont(ofSize: 44.0)
     }
 }
 
