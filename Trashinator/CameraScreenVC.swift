@@ -11,9 +11,8 @@ import CoreML
 
 class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
 
-    // let text = Array(contentsOfFile: blueItems.txt, encoding: NSUTF8StringEncoding, error: nil)
+    // let blue = Array(contentsOfFile: "blueItems.txt", encoding: String.Encoding.utf8, error: nil)
 
-    
     // MARK: IB Outlets
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
