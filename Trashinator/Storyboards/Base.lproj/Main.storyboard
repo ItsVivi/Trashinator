@@ -31,6 +31,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eAK-kp-OHx"/>
                     <connections>
+                        <outlet property="cameraScreenNavBar" destination="eAK-kp-OHx" id="RwU-Cn-ZLY"/>
                         <outlet property="itemNameLabel" destination="P3p-dm-0tB" id="B04-Uh-hor"/>
                     </connections>
                 </viewController>

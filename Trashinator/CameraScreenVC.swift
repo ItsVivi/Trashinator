@@ -12,16 +12,18 @@ class CameraScreenVC: UIViewController {
 
     // MARK: IB Outlets
     @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var cameraScreenNavBar: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        initLabel()
+        initLabels()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     // MARK: Actions
-    func initLabel() {
+    func initLabels() {
         itemNameLabel.text = "placeholder"
         itemNameLabel.font = UIFont.systemFont(ofSize: 44.0)
+        cameraScreenNavBar.title = "Trashinator"
     }
 }
 
