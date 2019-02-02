@@ -23,7 +23,7 @@ class CameraScreenVC: UIViewController {
     func initLabels() {
         itemNameLabel.text = "placeholder"
         itemNameLabel.font = UIFont.systemFont(ofSize: 44.0)
-        cameraScreenNavBar.title = "Trashinator"
+        cameraScreenNavBar.title = "zach was here"
     }
 }
 
