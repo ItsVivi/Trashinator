@@ -12,7 +12,7 @@
 		1648D1692205DDFB00D824A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1648D1672205DDFB00D824A4 /* Main.storyboard */; };
 		1648D16B2205DDFE00D824A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1648D16A2205DDFE00D824A4 /* Assets.xcassets */; };
 		1648D16E2205DDFE00D824A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1648D16C2205DDFE00D824A4 /* LaunchScreen.storyboard */; };
-		1648D1952205FD6600D824A4 /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1648D1942205FD6600D824A4 /* VGG16.mlmodel */; };
+		1648D197220615D500D824A4 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1648D196220615D500D824A4 /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		1648D16A2205DDFE00D824A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1648D16D2205DDFE00D824A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1648D16F2205DDFE00D824A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1648D1942205FD6600D824A4 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = VGG16.mlmodel; path = Trashinator/VGG16.mlmodel; sourceTree = "<group>"; };
+		1648D196220615D500D824A4 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../Downloads/Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,7 @@
 		1648D1572205DDFB00D824A4 = {
 			isa = PBXGroup;
 			children = (
-				1648D1942205FD6600D824A4 /* VGG16.mlmodel */,
+				1648D196220615D500D824A4 /* Inceptionv3.mlmodel */,
 				1648D1622205DDFB00D824A4 /* Trashinator */,
 				1648D1612205DDFB00D824A4 /* Products */,
 			);
@@ -147,8 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1648D1662205DDFB00D824A4 /* CameraScreenVC.swift in Sources */,
+				1648D197220615D500D824A4 /* Inceptionv3.mlmodel in Sources */,
 				1648D1642205DDFB00D824A4 /* AppDelegate.swift in Sources */,
-				1648D1952205FD6600D824A4 /* VGG16.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
