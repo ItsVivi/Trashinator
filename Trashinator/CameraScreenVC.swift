@@ -11,7 +11,7 @@ import CoreML
 import Foundation
 
 class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
-
+    var isHelpThere = true
     let blueList =  ["aerosolCan",
                      "aluminum",
                      "bottle",
@@ -41,7 +41,6 @@ class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
                      "newspaper",
                      "magazine",
                      "phone book",
-                     "plate",
                      "cup",
                      "poster",
                      "sticky note",
@@ -64,6 +63,7 @@ class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
                      "water bottle"]
     
     let clearList = ["balloon",
+                     "plate",
                      "binder",
                      "board game",
                      "candle",
@@ -283,7 +283,11 @@ class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+}
+extension String {
+    func trunc(length: Int, trailing: String = "%") -> String {
+        return (self.count > length) ? self.prefix(length) + trailing : self
     }
 }
 
@@ -336,8 +340,21 @@ extension CameraScreenVC: UIImagePickerControllerDelegate {
             return
         }
         itemNameLabel.text = "\(prediction.classLabel)"
-        let accuracy = "\(prediction.classLabelProbs)"
-        print("The likelyhood of this being accurate is: \(accuracy)%")
+        
+         func top(_ k: Int, _ prob: [String: Double]) -> [(String, Double)] {
+            return Array(prob.map { x in (x.key, x.value) }
+                .sorted(by: { a, b -> Bool in a.1 > b.1 })
+                .prefix(min(k, prob.count)))
+        }
+        
+        /* let accuracy = "\(top(1, prediction.classLabelProbs))"
+        let accuracy2 = accuracy.components(separatedBy: ",")
+        let accuracy3 = (accuracy2[1]).components(separatedBy: ")")[0]
+        let accuracy4 = ((accuracy3.components(separatedBy: "."))[1]) 
+        let accuracy5 = String(accuracy4).trunc(length: 2) */
+        
+        
+        print("Accuracy: \(accuracy5)")
 
         if blueList.contains(String(prediction.classLabel)) {
             print("blue match")
@@ -355,7 +372,6 @@ extension CameraScreenVC: UIImagePickerControllerDelegate {
             print("no match")
             itemNameLabel.text = "\(prediction.classLabel) does not match any items on the list"
         }
-        
     }
 }
 
