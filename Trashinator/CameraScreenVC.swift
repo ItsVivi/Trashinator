@@ -246,7 +246,6 @@ class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
                       "stain",
                       "varnish"]
     
-    
     // MARK: IB Outlets
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -261,7 +260,6 @@ class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
         cameraPicker.delegate = self
         cameraPicker.sourceType = .camera
         cameraPicker.allowsEditing = false
-        
         present(cameraPicker, animated: true)
     }
     @IBAction func libraryNavBarButton(_ sender: UIBarButtonItem) {
@@ -270,7 +268,6 @@ class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
         picker.allowsEditing = false
         picker.delegate = self
         picker.sourceType = .photoLibrary
-        
         present(picker, animated: true)
     }
     
@@ -283,11 +280,6 @@ class CameraScreenVC: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-}
-extension String {
-    func trunc(length: Int, trailing: String = "%") -> String {
-        return (self.count > length) ? self.prefix(length) + trailing : self
     }
 }
 
@@ -340,22 +332,6 @@ extension CameraScreenVC: UIImagePickerControllerDelegate {
             return
         }
         itemNameLabel.text = "\(prediction.classLabel)"
-        
-         func top(_ k: Int, _ prob: [String: Double]) -> [(String, Double)] {
-            return Array(prob.map { x in (x.key, x.value) }
-                .sorted(by: { a, b -> Bool in a.1 > b.1 })
-                .prefix(min(k, prob.count)))
-        }
-        
-        /* let accuracy = "\(top(1, prediction.classLabelProbs))"
-        let accuracy2 = accuracy.components(separatedBy: ",")
-        let accuracy3 = (accuracy2[1]).components(separatedBy: ")")[0]
-        let accuracy4 = ((accuracy3.components(separatedBy: "."))[1]) 
-        let accuracy5 = String(accuracy4).trunc(length: 2)
-        
-        
-        print("Accuracy: \(accuracy5)")
-         this is commented out because sometimes it breaks, don't worry about it */
 
         if blueList.contains(String(prediction.classLabel)) {
             print("blue match")
