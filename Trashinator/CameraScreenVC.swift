@@ -359,19 +359,19 @@ extension CameraScreenVC: UIImagePickerControllerDelegate {
 
         if blueList.contains(String(prediction.classLabel)) {
             print("blue match")
-            itemNameLabel.text = "\(prediction.classLabel)s go in the blue garbage"
+            itemNameLabel.text = "\((prediction.classLabel).capitalized)s go in the blue garbage"
         } else if greenList.contains(String(prediction.classLabel)) {
             print("green match")
-            itemNameLabel.text = "\(prediction.classLabel)s go in the green garbage"
+            itemNameLabel.text = "\((prediction.classLabel).capitalized)s go in the green garbage"
         } else if clearList.contains(String(prediction.classLabel)) {
             print("clear match")
-            itemNameLabel.text = "\(prediction.classLabel)s go in the clear garbage"
+            itemNameLabel.text = "\((prediction.classLabel).capitalized)s go in the clear garbage"
         } else if hazardList.contains(String(prediction.classLabel)) {
             print("hazard match")
-            itemNameLabel.text = "\(prediction.classLabel)s go in the hazardous disposal"
+            itemNameLabel.text = "\((prediction.classLabel).capitalized)s go in the hazardous disposal"
         } else {
             print("no match")
-            itemNameLabel.text = "\(prediction.classLabel) does not match any items on the list"
+            itemNameLabel.text = "\((prediction.classLabel).capitalized) does not match any items on the list"
         }
     }
 }
