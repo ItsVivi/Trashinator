@@ -351,10 +351,11 @@ extension CameraScreenVC: UIImagePickerControllerDelegate {
         let accuracy2 = accuracy.components(separatedBy: ",")
         let accuracy3 = (accuracy2[1]).components(separatedBy: ")")[0]
         let accuracy4 = ((accuracy3.components(separatedBy: "."))[1]) 
-        let accuracy5 = String(accuracy4).trunc(length: 2) */
+        let accuracy5 = String(accuracy4).trunc(length: 2)
         
         
         print("Accuracy: \(accuracy5)")
+         this is commented out because sometimes it breaks, don't worry about it */
 
         if blueList.contains(String(prediction.classLabel)) {
             print("blue match")
